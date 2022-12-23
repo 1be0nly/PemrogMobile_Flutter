@@ -14,7 +14,7 @@ class _ResultPageState extends State<ResultPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Widget ke-2')),
+      appBar: AppBar(title: const Text('Dialog Widget')),
       body: Padding(
         padding: const EdgeInsets.all(16),
         child: Column(

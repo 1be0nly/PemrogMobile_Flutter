@@ -1,21 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
-class ListWidget extends StatelessWidget {
+class ListWidget extends StatefulWidget {
   const ListWidget({super.key});
 
   @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: ListViewWidget(),
-    );
-  }
+  State<ListWidget> createState() => _ListWidgetState();
 }
 
-class ListViewWidget extends StatelessWidget {
+class _ListWidgetState extends State<ListWidget> {
   final List bulan = [
     "Januari",
-    "Fabruari",
+    "Februari",
     "Maret",
     "April",
     "Mei",
@@ -27,6 +23,7 @@ class ListViewWidget extends StatelessWidget {
     "November",
     "Desember"
   ];
+
   final colorCodes = [
     Colors.red,
     Colors.purple,
@@ -43,21 +40,33 @@ class ListViewWidget extends StatelessWidget {
   ];
 
   @override
+  void initState() {
+    super.initState();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Widget ke-3')),
-      body: ListView.builder(
-        itemBuilder: (context, index) {
-          return Container(
-            color: colorCodes[index],
-            child: Padding(
-                padding: const EdgeInsets.all(15.0),
-                child: Text('Bulan: ${bulan[index]}',
-                    style: const TextStyle(fontSize: 30))),
-          );
-        },
-        itemCount: bulan.length,
-      ),
-    );
+        appBar: AppBar(title: const Text('ListView Widget')),
+        body: ListView.builder(
+          itemBuilder: (context, index) {
+            return GestureDetector(
+                onTap: () {
+                  Fluttertoast.showToast(
+                      msg: 'Bulan Ke-${index + 1}',
+                      backgroundColor: Colors.white.withOpacity(0.5),
+                      textColor: Colors.black,
+                      gravity: ToastGravity.BOTTOM);
+                },
+                child: Container(
+                  color: colorCodes[index],
+                  child: Padding(
+                      padding: const EdgeInsets.all(15.0),
+                      child: Text('Bulan: ${bulan[index]}',
+                          style: const TextStyle(fontSize: 30))),
+                ));
+          },
+          itemCount: bulan.length,
+        ));
   }
 }

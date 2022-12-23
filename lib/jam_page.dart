@@ -20,7 +20,7 @@ class _JamWidgetState extends State<JamWidget> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(title: const Text('Widget ke-4')),
+        appBar: AppBar(title: const Text('TimePicker Widget')),
         body: Container(
             padding: const EdgeInsets.all(15),
             child:

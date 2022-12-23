@@ -22,7 +22,7 @@ class _TglWidgetState extends State<TglWidget> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(title: const Text('Widget ke-5')),
+        appBar: AppBar(title: const Text('DatePicker Widget')),
         body: Container(
             padding: const EdgeInsets.all(15),
             child:

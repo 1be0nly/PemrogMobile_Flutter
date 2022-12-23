@@ -40,7 +40,7 @@ class _CounterPageState extends State<CounterPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Widget ke-2')),
+      appBar: AppBar(title: const Text('Counter Widget')),
       body: Center(
         child: Padding(
           padding: const EdgeInsets.all(16),
